@@ -43,8 +43,8 @@ $ minikube addons enable ingress    // Enable the ingress addon on Minikube
 
 ```
 
-## Steps
-|Steps  |Task                                                              |Status            |
+## Steps to implement the Use Case.
+|Step  |Task                                                              |Status            |
 |-------|------------------------------------------------------------------|------------------|
 |1.     |Created the k8s deployment with nginx pod for serving traffic.    |:heavy_check_mark:|
 |2.     |Configure the *default.conf* inside the nginx pod.                |:heavy_check_mark:|       
@@ -52,8 +52,16 @@ $ minikube addons enable ingress    // Enable the ingress addon on Minikube
 |4.     |Created the k8s deployment for the simple Flask app.              |:heavy_check_mark:|
 |5.     |Created a k8s Ingress (nginx) and set up the hostname.            |:heavy_check_mark:|
 
-kubectl port-forward service/python-service 5000:5000
 
-kubectl create configmap nginx-config --from-file=default.conf
 
-Enable ingress in minikube
+- Command for port forwarding.
+```
+$ kubectl port-forward service/python-service 5000:5000
+
+```
+
+- Command to create *configMap* in GKE with a file.
+```
+$ kubectl create configmap nginx-config --from-file=default.conf
+
+```
