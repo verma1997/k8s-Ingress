@@ -3,10 +3,8 @@
 In this project, we have considered a use case where we are implementing Kubernetes Ingress.
 
 ## Use Case
-```
 In this exercise, we are creating a simple Flask app, dockerizing it and deploying it on GKE. Also, deploying a NGINX pod and using that to route the traffic to the python application pod.
 
-```
 
 ## Prerequisites
 
@@ -25,11 +23,23 @@ $ sudo apt-get install -y kubectl
 ```
 
 **2.** Install Minikube.
-Commands to install Minikube in Linux. For more, click [here](https://minikube.sigs.k8s.io/docs/start/#binary-download).
+- Commands to install Minikube in Linux. For more, click [here](https://minikube.sigs.k8s.io/docs/start/#binary-download).
 ```
 $ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 
 $ sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
+```
+
+- To run Minikube, run the command `minikube start`. If minikube fails to start, see the [drivers](https://minikube.sigs.k8s.io/docs/drivers/) page for help setting up a compatible container or virtual-machine manager.
+To check the status of Minikube, execute `minikube status`.
+
+
+**3.** Enable the *ingress* addon in Minikube.
+```
+$ minkube addons list               // List all the addons available on Minikube
+
+$ minikube addons enable ingress    // Enable the ingress addon on Minikube
 
 ```
 
